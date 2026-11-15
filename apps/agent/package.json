@@ -1,0 +1,26 @@
+{
+  "name": "@relay/agent",
+  "version": "1.0.0",
+  "description": "Relay macOS Agent Daemon - Connects outbound to Gateway and executes authorized commands",
+  "bin": {
+    "relay-agent": "./dist/cli.js"
+  },
+  "main": "./dist/index.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/cli.js start",
+    "dev": "tsc --watch & node dist/cli.js start",
+    "test": "node --test dist/**/*.test.js"
+  },
+  "dependencies": {
+    "@relay/protocol": "*",
+    "dotenv": "^16.4.7",
+    "ws": "^8.18.0",
+    "zod": "^3.24.1"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.1",
+    "@types/ws": "^8.5.13",
+    "typescript": "^5.7.2"
+  }
+}
