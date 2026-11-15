@@ -2,6 +2,7 @@ import "./globals.css";
 import { Navbar } from "@/components/Navbar";
 import { BottomNav } from "@/components/BottomNav";
 import type { Viewport, Metadata } from "next";
+import { GraphHelpers } from "next/dist/compiled/webpack/webpack";
 
 export const metadata: Metadata = {
   title: "Relay - Secure Mac Remote Control",
@@ -30,3 +31,13 @@ export default function RootLayout({
     </html>
   );
 }
+
+
+
+// upload paper repo 
+
+// answer based on that 
+
+
+// 2. RAG -> Document (knowledge Graph)
+
