@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import {
   IconCpu,
   IconHardDrive,
@@ -25,8 +26,8 @@ export default function Header({
         <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4">
           {/* Left: Brand & Target Device Selector */}
           <div className="flex items-center gap-4 flex-wrap">
-            <div className="flex items-center gap-2.5">
-              <div className="w-9 h-9 rounded-xl bg-gradient-to-tr from-cyan-600 to-emerald-500 p-0.5 shadow-lg shadow-cyan-950/40 flex items-center justify-center">
+            <Link to="/" className="flex items-center gap-2.5 group hover:opacity-95 transition-opacity" title="Go to Relay Home">
+              <div className="w-9 h-9 rounded-xl bg-gradient-to-tr from-cyan-600 to-emerald-500 p-0.5 shadow-lg shadow-cyan-950/40 flex items-center justify-center transition-transform group-hover:scale-105">
                 <div className="w-full h-full bg-zinc-950 rounded-[10px] flex items-center justify-center">
                   <IconZap className="w-5 h-5 text-cyan-400" />
                 </div>
@@ -42,7 +43,7 @@ export default function Header({
                 </div>
                 <p className="text-[11px] text-zinc-400">Remote Device Automation & Telemetry</p>
               </div>
-            </div>
+            </Link>
 
             <div className="h-6 w-px bg-zinc-800 hidden sm:block" />
 
@@ -107,6 +108,15 @@ export default function Header({
 
             {/* Quick action utility buttons */}
             <div className="flex items-center gap-2">
+              {/* Back to Home Page */}
+              <Link
+                to="/"
+                className="px-3 py-1.5 rounded-xl bg-zinc-900 hover:bg-zinc-800 border border-zinc-700/80 text-zinc-300 hover:text-white text-xs font-medium flex items-center gap-1.5 transition hover:border-zinc-600 focus:outline-none"
+                title="Return to Home Page"
+              >
+                <span>Home</span>
+              </Link>
+
               {/* Remote Terminal Trigger */}
               <button
                 onClick={onOpenTerminal}

@@ -1,18 +1,17 @@
-import {BrowserRouter,Routes,Route} from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
+import Home from './pages/Home';
 import Dashboard from './pages/Dashboard';
-import Dash from "./pages/Dashboard_updated"
 
-export default function app(){
-
-  return(
-    <>
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Dashboard/>}></Route>    
-          <Route path="/dash" element={<Dash/>}></Route>    
-        </Routes>
-      </BrowserRouter>
-    </>
-  )
+export default function App() {
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/dash" element={<Dashboard />} />
+        <Route path="/app" element={<Dashboard />} />
+        <Route path="*" element={<Navigate to="/" replace />} />
+      </Routes>
+    </BrowserRouter>
+  );
 }
-
